@@ -1,0 +1,41 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+.header_row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  background-color: aqua;
+  opacity: 0.7;
+
+  .header_list {
+    display: flex;
+    justify-content: flex-end;
+    li {
+      margin-left: 10px;
+      cursor: pointer;
+      &:first-child { margin-left: 0; }
+    }
+    .active {
+      color: red;
+    }
+  }
+}
+
+h1 {
+  font-family: 'Nanum', sans-serif;
+  font-size: 26px;
+}
+ul {
+  li {
+    /* font-family: 'Noto Sans KR', sans-serif; */
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 16px;
+    font-weight: 700;
+    color: #FFF;
+  }
+}

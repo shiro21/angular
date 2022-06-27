@@ -1,0 +1,13 @@
+<header>
+  <div class="header_container">
+    <div class="header_row">
+      <h1>
+        <em>{{item[0]}}</em> {{item[1]}}
+      </h1>
+
+      <ul class="header_list">
+        <li *ngFor="let list of headerList; let i = index;" id="parasite{{i + 1}}" (click)="addNewItem(i + 1)" [ngClass]="i + 1 === headerValue ? 'active' : ''">Menu {{i + 1}}</li>
+      </ul>
+    </div>
+  </div>
+</header>

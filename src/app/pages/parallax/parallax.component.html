@@ -1,0 +1,9 @@
+<app-p-header [item]="currentItem" [item2]="sectionTop" (newItemEvent)="addItem($event)"></app-p-header>
+
+<section id="ps{{i + 1}}" class="para" *ngFor="let item of famousSay; let i = index;">
+  <div class="contents">
+    {{item.say}}<br /> <em>{{item.person}}</em>
+  </div>
+</section>
+
+
