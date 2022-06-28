@@ -1,0 +1,62 @@
+header {
+  width: 100%;
+  height: 56px;
+  .container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 56px;
+  }
+}
+
+.header_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  > h1 {
+    font-family: 'Nanum', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    strong { font-size: 20px; }
+  }
+
+
+  > ul {
+    display: inline-flex;
+    text-align: center;
+    flex-direction: row-reverse;
+    align-items: center;
+    li {
+      width: 40px;
+      > a {
+        position: relative;
+        display: block;
+        .profile {
+          > img {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+          }
+        }
+      }
+      // 숨겨진 메뉴
+      .menu {
+        position: absolute;
+        top: 56px;
+        right: 0;
+        width: 150px;
+        height: 300px;
+        background-color: #FFF;
+        border: 1px solid #DDD;
+        border-radius: 8px;
+        padding: 16px;
+        box-sizing: border-box;
+        z-index: 51;
+      }
+
+      // open
+
+    }
+  }
+}

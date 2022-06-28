@@ -18,6 +18,7 @@ export class PHeaderComponent implements OnInit {
       if(verticalOffset < this.item2[i].parentElement?.offsetTop) {
         this.headerValue = i;
         break;
+        // 마지막 값이 잡히지 않아서 for문 마지막 값 불러오기로 직접 넣어줌
       } else if(verticalOffset > this.item2[this.item2.length - 1].parentElement?.offsetTop) {
         this.headerValue = this.item2.length;
         break;
