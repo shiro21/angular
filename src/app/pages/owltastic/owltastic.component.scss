@@ -1,0 +1,111 @@
+#main_banner {
+  position: relative;
+  background: #214261 url(https://owltastic.com/img/main-banner-bg@2x.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 56px 6.395348837% 88px;
+  position: relative;
+  text-align: center;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-bottom: 64px;
+    > h1 {
+      font-size: 26px;
+      font-weight: 600;
+      color: #DBBD7F;
+    }
+    .logo_wrap {
+      position: relative;
+      width: 140px;
+      height: 140px;
+      svg {
+        position: absolute;
+        // left: 50%;
+        // transform: translateX(-50%);
+        width: 128px;
+      }
+      .outer-logo-circle { fill: #DBBD7F; }
+      .owl-face { fill: #FAF7EB; }
+      .owl-face-outline { fill: #214261; }
+      .dotted-circle {
+        fill: none;
+        stroke: #FAF7EB;
+        stroke-linecap: round;
+        stroke-width: 1.5px;
+        stroke-dasharray: 0.5 5;
+        animation: small-spin 120s linear infinite;
+      }
+    }
+    .contact {
+      > a {
+        text-transform: uppercase;
+        font: 400 16px grad, serif;
+        letter-spacing: 0.075em;
+        line-height: 1.5em;
+        color: #FAF7EB;
+      }
+    }
+  }
+}
+
+.star {
+  position: absolute;
+  z-index: 1;
+}
+.star1 {
+  left: 40%;
+  top: 7%;
+  animation: blink 2s ease-in-out infinite;
+}
+.star2 {
+  right: 37%;
+  top: 19%;
+  animation: blink-alt 3s ease-in-out infinite;
+}
+.star3 {
+  left: 30%;
+  transform: rotate(45deg);
+  top: 24%;
+  animation: blink-alt 4s ease-in-out infinite;
+}
+.star4 {
+  right: 28%;
+  top: 27%;
+  transform: rotate(25deg);
+  animation: blink 2.5s ease-in-out infinite;
+}
+.star5 {
+  left: 28%;
+  bottom: 20%;
+  transform: rotate(45deg);
+  animation: blink-alt 3.5s ease-in-out infinite;
+}
+.star6 {
+  right: 26%;
+  bottom: 18%;
+  transform: rotate(25deg);
+  animation: blink-alt 2s ease-in-out infinite;
+}
+.star7 {
+  left: 8%;
+  bottom: 10%;
+  animation: blink 4s ease-in-out infinite;
+}
+.star8 {
+  bottom: 10%;
+  right: 5%;
+  animation: blink 3s ease-in-out infinite;
+}
+
+@keyframes small-spin {
+  0% {
+    transform: rotate(0deg) translate(10px, 10px);
+  }
+  100% {
+    transform: rotate(-360deg) translate(10px, 10px);
+  }
+}

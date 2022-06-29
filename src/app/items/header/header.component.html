@@ -12,7 +12,10 @@
             <a (click)="listMove(1)" href="javascript:void()"><fa-icon class="icon" [icon]="faBell"></fa-icon></a>
             <div class="menu" *ngIf="menus === 1">하이</div>
           </li>
-          <li><a (click)="listMove(2)" href="javascript:void()"><fa-icon class="icon" [icon]="faPlus"></fa-icon></a></li>
+          <li>
+            <a (click)="listMove(2)" href="javascript:void()"><fa-icon class="icon" [icon]="faPlus"></fa-icon></a>
+            <div class="menu" *ngIf="menus === 2">반갑습니다.</div>
+          </li>
           <li><a (click)="listMove(3)" href="javascript:void()"><div class="profile"><img src="../../../assets/imgs/img1.jpeg" alt="프로필"></div></a></li>
         </ul>
       </div>
