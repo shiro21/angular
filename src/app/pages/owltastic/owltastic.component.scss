@@ -109,7 +109,7 @@ section {
     max-width: 360px;
     line-height: 1.5em;
     letter-spacing: 0.075em;
-    font: 400 16px 'Nanum Myeongjo', serif;
+    font: 600 16px 'Nanum Myeongjo', serif;
     text-transform: uppercase;
     border-radius: 100px;
     outline: none;
@@ -118,8 +118,12 @@ section {
     background: #FAF7EB;
     color: #214261;
     z-index: 1;
+    &:hover {
+      background: #DBBD7F;
+    }
   }
 }
+// Main Banner --
 
 #about_me {
   display: flex;
@@ -179,6 +183,7 @@ section {
     }
   }
 }
+// About Me --
 
 #recent_project {
   width: 100%;
@@ -191,6 +196,7 @@ section {
     color: #FAF7EB;
      box-sizing: border-box;
     .recent_project_header {
+      text-align: center;
       > h1 {
         font: 600 44px 'Nanum Myeongjo', serif;
         line-height: 1.25em;
@@ -205,6 +211,545 @@ section {
         line-height: 1.45454545em;
         text-align: center;
       }
+      > a {
+        display: inline-block;
+        line-height: 1.5em;
+        text-transform: uppercase;
+        margin-bottom: 32px;
+        border-bottom: 1px solid #DBBD7F;
+        color: #DBBD7F;
+        font: 400 16px 'Nanum Myeongjo', serif;
+        letter-spacing: 0.075em;
+      }
+    }
+
+    > ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: stretch;
+      margin: 0 0 88px 0;
+      li {
+        position: relative;
+        width: 31%;
+        background: #FAF7EB;
+        a {
+          display: block;
+          color: #214261;
+          padding: 32px 32px 80px 32px;
+          > img {
+            display: block;
+            opacity: 0.95;
+            transition: all 0.1s ease-in-out;
+            width: 100%;
+            filter: grayscale(1);
+            &:hover { filter: none; }
+          }
+          > h2 {
+            margin: 32px 0 8px 0;
+            text-align: center;
+            font: 600 26px 'Nanum Myeongjo', serif;
+          }
+          > span {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            line-height: 1.5em;
+            font-size: 16px;
+            background: #DBBD7F;
+            padding: 16px 32px;
+            box-sizing: border-box;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+// Recent Project --
+
+#impressive_article {
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+  background: #DBBD7F url(https://owltastic.com/img/tiny-moon.png) bottom right no-repeat;
+  background-size: 161px;
+  margin: 32px 0;
+  padding: 88px 6.395348837%;
+  .impressive_content {
+    width: 70%;
+    > h1 {
+      font: 600 44px 'Nanum Myeongjo', serif;
+      line-height: 1.25em;
+      padding-top: 16px;
+      margin-bottom: 24px;
+    }
+    > p {
+      margin-bottom: 32px;
+      font-size: 22px;
+      line-height: 1.45454545em;
+    }
+    > ul {
+      border-top: 1px solid #214261;
+      margin: 16px 0 32px 0;
+      width: 100%;
+      li {
+        border-bottom: 1px solid #214261;
+        a {
+          display: flex;
+          padding: 20px 0 16px 0;
+          align-items: center;
+          > h4 {
+            width: 100%;
+            font: 600 26px 'Nanum Myeongjo', serif;
+            line-height: 1.25em;
+            color: #214261;
+          }
+          > span {
+            svg {
+              circle { background: #FAF7EB; }
+              path {
+                fill: none;
+                stroke: #214261;
+                stroke-linecap: round;
+                stroke-miterlimit: 10;
+                stroke-width: 2px;
+              }
+            }
+          }
+        }
+      }
+    }
+    > a {
+      width: auto;
+      color: #FAF7EB;
+      display: inline-block;
+      background: #214261;
+      font: 400 16px 'Nanum Myeongjo', serif;
+      letter-spacing: 0.075em;
+      line-height: 1.5em;
+      cursor: pointer;
+      padding: 12px 32px 14px 32px;
+      max-width: 360px;
+      border-radius: 100px;
+    }
+  }
+  .impressive_circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-size: 161px;
+    z-index: 0;
+    .circle_image {
+      position: absolute;
+      top: 50%;
+      left: -25%;
+      transform: translate(0, -50%);
+      width: 48%;
+      > img {
+        width: 100%;
+        animation: big-spin 160s linear infinite;
+      }
+    }
+  }
+}
+// impressive_article --
+
+#social_wrap {
+  display: flex;
+  .social_follow_me {
+    background: #214261 url(https://owltastic.com/img/contact-form@2x.jpg) no-repeat;
+    background-size: cover;
+    font-size: 18px;
+    padding: 88px 6.395348837%;
+    margin-right: 2%;
+    width: 49%;
+    > h1 {
+      color: #FAF7EB;
+      font: 600 44px 'Nanum Myeongjo', serif;
+      margin-bottom: 24px;
+      padding-top: 16px;
+      line-height: 1.25em;
+    }
+    > ul {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 8px;
+      li {
+        width: 50%;
+        a {
+          display: flex;
+          align-items: center;
+          padding: 8px 0;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+          font: 400 16px 'Nanum Myeongjo', serif;
+          letter-spacing: 0.075em;
+          line-height: 1.5em;
+          color: #DBBD7F;
+          svg {
+            flex-shrink: 0;
+            fill: #DBBD7F;
+            margin-right: 12px;
+            width: 32px;
+          }
+          font {
+            font: 400 16px 'Nanum Myeongjo', serif;
+            letter-spacing: 0.075em;
+            line-height: 1.5em;
+          }
+        }
+      }
+    }
+  }
+  .additional_text {
+    width: 49%;
+    padding: 6.395348837%;
+    background: #DBBD7F url(https://owltastic.com/img/follow-bg.png);
+    background-position: 50%;
+    > h1 {
+      font: 600 44px 'Nanum Myeongjo', serif;
+      line-height: 1.25em;
+      padding-top: 16px;
+      margin-bottom: 24px;
+    }
+    > p {
+      font-size: 22px;
+      line-height: 1.45454545em;
+      color: #214261;
+    }
+  }
+}
+// social_wrap --
+
+#footer {
+  footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: url(https://owltastic.com/img/bg-star-chart.jpg);
+    background-size: 100%;
+    color: #FAF7EB;
+    padding: 32px 6.395348837% 32px;
+    > h2 {
+      font: 600 26px 'Nanum Myeongjo', serif;
+      line-height: 1.25em;
+      color: #DBBD7F;
+    }
+    > p {
+      font {
+        font: 400 16px 'Nanum Myeongjo', serif;
+        letter-spacing: 0.075em;
+        line-height: 1.5em;
+        text-align: right;
+      }
+    }
+  }
+}
+// footer --
+
+@media screen and (max-width: 1024px) {
+  #main_banner {
+    .main_banner_title {
+      > h1 { font-size: 36px; }
+    }
+  }
+
+  #about_me {
+    .description_wrap {
+      width: 100%;
+      padding: 40px 6.395348837%;
+      box-sizing: border-box;
+      .description {
+        width: 100%;
+        > h1 {}
+        > p {}
+      }
+      .container_circle {
+        .about_circle {
+          > img {}
+        }
+      }
+    }
+
+    .character {
+      width: 100%;
+      > img {}
+    }
+  }
+
+  #recent_project {
+    .recent_project_wrap {
+      .recent_project_header {
+        .star {}
+        > h1 {}
+        > p {}
+        > a {}
+      }
+      > ul {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        li {
+          margin: 32px auto;
+          max-width: 700px;
+          width: 100%;
+          a {
+            > img {}
+            > h2 {}
+            > span {}
+          }
+        }
+      }
+    }
+  }
+
+  #impressive_article {
+    .impressive_content {
+      > h1 {}
+      > p {}
+      > ul {
+        li {
+          a {}
+        }
+      }
+      > a {}
+    }
+    .impressive_circle {
+      .circle_image {
+        > img {}
+      }
+    }
+  }
+
+  #social_wrap {
+    .social_follow_me {
+      > h1 {
+      }
+      > ul {
+        li {
+          a {
+            svg {
+            }
+            font {
+            }
+          }
+        }
+      }
+    }
+    .additional_text {
+      > h1 {}
+      > p {}
+    }
+  }
+}
+
+@media screen and (max-width: 860px) {
+  #main_banner {
+    .star { display: none; }
+  }
+
+  #about_me {
+    display: block;
+    .description_wrap {
+      margin-bottom: 32px;
+      .description {
+        margin: 0 auto;
+        > h1 {
+          width: 75%;
+          margin: 0 auto 32px auto;
+          text-align: center;
+        }
+        > p {}
+      }
+      .container_circle {
+        display: none;
+        .about_circle {
+          > img {}
+        }
+      }
+    }
+
+    .character {
+      > img {}
+    }
+  }
+
+  #recent_project {
+    .recent_project_wrap {
+      .recent_project_header {
+        .star {}
+        > h1 {}
+        > p {}
+        > a {}
+      }
+      > ul {
+        li {
+          a {
+            > img {}
+            > h2 {}
+            > span {}
+          }
+        }
+      }
+    }
+  }
+
+  #impressive_article {
+    .impressive_content {
+      > h1 {
+      }
+      > p {
+      }
+      > ul {
+        li {
+          a {
+            > h4 {
+
+            }
+            > span {
+              svg {
+                circle {}
+                path {}
+              }
+            }
+          }
+        }
+      }
+      > a {}
+    }
+    .impressive_circle {
+      .circle_image {
+        > img {}
+      }
+    }
+  }
+
+  #social_wrap {
+    .social_follow_me {
+      > h1 {
+      }
+      > ul {
+        li {
+          a {
+            svg {
+            }
+            font {
+            }
+          }
+        }
+      }
+    }
+    .additional_text {
+      > h1 {}
+      > p {}
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #main_banner {
+    header {
+      display: block; margin-bottom: 32px;
+      > h1 {
+        margin: 0 auto 12px auto;
+        font-size: 22px;
+      }
+      .logo_wrap { margin: 0 auto 32px auto; }
+    }
+    .main_banner_title {
+      > h1 { font-size: 28px; }
+      > p { font-size: 18px; margin-bottom: 40px; width: 100%; }
+    }
+  }
+
+  #about_me {
+    .description_wrap {
+      padding: 32px 16px;
+      min-height: auto;
+      .description {
+        width: 100%;
+        > h1 {
+          width: 100%;
+          font-size: 24px;
+        }
+        > p {}
+      }
+      .container_circle {
+        .about_circle {
+          > img {}
+        }
+      }
+    }
+
+    .character {
+      > img {}
+    }
+  }
+
+  #recent_project {
+    .recent_project_wrap {
+      .recent_project_header {
+        .star {}
+        > h1 {}
+        > p {}
+        > a {}
+      }
+      > ul {
+        li {
+          a {
+            padding: 24px 24px 72px 24px;
+            > img {}
+            > h2 { font-size: 22px; }
+            > span { padding: 16px; }
+          }
+        }
+      }
+    }
+  }
+
+  #impressive_article {
+    .impressive_content {
+      > h1 {}
+      > p {}
+      > ul {
+        li {
+          a {}
+        }
+      }
+      > a {}
+    }
+    .impressive_circle {
+      .circle_image {
+        > img {}
+      }
+    }
+  }
+
+  #social_wrap {
+    .social_follow_me {
+      > h1 {
+      }
+      > ul {
+        li {
+          a {
+            svg {
+            }
+            font {
+            }
+          }
+        }
+      }
+    }
+    .additional_text {
+      > h1 {}
+      > p {}
     }
   }
 }
