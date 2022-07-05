@@ -1,45 +1,106 @@
 <!--
   site : https://owltastic.com/
 -->
+<main>
+  <section id="main_banner">
+    <div class="star" [class]="'star' + (i + 1)" *ngFor="let item of items; let i = index;">
+      <svg [attr.xmlns]="item.xmlns" [attr.width]="item.width" [attr.height]="item.height" [attr.viewBox]="item.viewBox">
+        <path *ngIf="i == 0 || i == 3 || i == 4 || i == 6" [attr.d]="item.d" [attr.fill]="item.fill" [attr.stroke]="item.stroke"></path>
 
-<section id="main_banner">
-  <div class="star" [class]="'star' + (i + 1)" *ngFor="let item of items; let i = index;">
-    <svg [attr.xmlns]="item.xmlns" [attr.width]="item.width" [attr.height]="item.height" [attr.viewBox]="item.viewBox">
-      <path *ngIf="i == 0 || i == 3 || i == 4 || i == 6" [attr.d]="item.d" [attr.fill]="item.fill" [attr.stroke]="item.stroke"></path>
-
-      <g *ngIf="i !== 0 && i !== 3 && i !== 4 && i !== 6" fill="none" stroke-linecap="round">
-        <path [attr.d]="item.array[0]" stroke="none"></path>
-        <path [attr.d]="item.array[1]" stroke="none" [attr.fill]="item.fill"></path>
-      </g>
-    </svg>
-  </div>
-
-  <header>
-    <h1>owltastic</h1>
-
-    <div class="logo_wrap">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" width="144" height="144" class="logo">
-        <g transform="translate(-648 -74)">
-          <circle class="outer-logo-circle" cx="58.345" cy="58.345" r="58.345" transform="translate(661.655 87.655)"></circle>
-          <circle class="owl-face" cx="31.034" cy="31.034" r="31.034" transform="translate(688.966 114.966)"></circle>
-          <g transform="translate(671.586 97.691)">
-            <g transform="translate(39.536 0) rotate(35)">
-              <rect class="owl-face-outline" width="3.972" height="16.262" transform="matrix(0.819, -0.574, 0.574, 0.819, 32.405, 35.006)"></rect>
-              <path class="owl-face-outline" d="M63.04,15.156l-.124-.124c0-.124-.124-.124-.124-.248A34.506,34.506,0,0,0,6.185,54.26c0,.124.124.124.124.248l.124.124h0A34.511,34.511,0,0,0,63.04,15.156ZM4.2,38.37A30.547,30.547,0,0,1,48.516,7.336a18.316,18.316,0,0,0-18.5,20.855,18.118,18.118,0,0,0-18.993,1.117A17.912,17.912,0,0,0,4.2,38.37ZM9.785,52.4A14.258,14.258,0,0,1,33.123,36.012l3.228-2.234A14.258,14.258,0,0,1,59.688,17.391h0A30.482,30.482,0,0,1,9.785,52.4" transform="translate(0 0)"></path>
-              <circle class="owl-face-outline" cx="3.103" cy="3.103" r="3.103" transform="translate(19.148 43.162)"></circle>
-              <circle class="owl-face-outline" cx="3.103" cy="3.103" r="3.103" transform="translate(46.603 23.937)"></circle>
-            </g>
-          </g>
+        <g *ngIf="i !== 0 && i !== 3 && i !== 4 && i !== 6" fill="none" stroke-linecap="round">
+          <path [attr.d]="item.array[0]" stroke="none"></path>
+          <path [attr.d]="item.array[1]" stroke="none" [attr.fill]="item.fill"></path>
         </g>
       </svg>
-
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" width="144" height="144" class="dotted-circle">
-        <circle cx="72" cy="72" r="71"></circle>
-      </svg>
     </div>
 
-    <div class="contact">
-      <a href="javascript:viod(0)">Let's Connect</a>
+    <header>
+      <h1>owltastic</h1>
+
+      <div class="logo_wrap">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" width="144" height="144" class="logo">
+          <g transform="translate(-648 -74)">
+            <circle class="outer-logo-circle" cx="58.345" cy="58.345" r="58.345" transform="translate(661.655 87.655)"></circle>
+            <circle class="owl-face" cx="31.034" cy="31.034" r="31.034" transform="translate(688.966 114.966)"></circle>
+            <g transform="translate(671.586 97.691)">
+              <g transform="translate(39.536 0) rotate(35)">
+                <rect class="owl-face-outline" width="3.972" height="16.262" transform="matrix(0.819, -0.574, 0.574, 0.819, 32.405, 35.006)"></rect>
+                <path class="owl-face-outline" d="M63.04,15.156l-.124-.124c0-.124-.124-.124-.124-.248A34.506,34.506,0,0,0,6.185,54.26c0,.124.124.124.124.248l.124.124h0A34.511,34.511,0,0,0,63.04,15.156ZM4.2,38.37A30.547,30.547,0,0,1,48.516,7.336a18.316,18.316,0,0,0-18.5,20.855,18.118,18.118,0,0,0-18.993,1.117A17.912,17.912,0,0,0,4.2,38.37ZM9.785,52.4A14.258,14.258,0,0,1,33.123,36.012l3.228-2.234A14.258,14.258,0,0,1,59.688,17.391h0A30.482,30.482,0,0,1,9.785,52.4" transform="translate(0 0)"></path>
+                <circle class="owl-face-outline" cx="3.103" cy="3.103" r="3.103" transform="translate(19.148 43.162)"></circle>
+                <circle class="owl-face-outline" cx="3.103" cy="3.103" r="3.103" transform="translate(46.603 23.937)"></circle>
+              </g>
+            </g>
+          </g>
+        </svg>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" width="144" height="144" class="dotted-circle">
+          <circle cx="72" cy="72" r="71"></circle>
+        </svg>
+      </div>
+
+      <div class="contact">
+        <a href="javascript:viod(0)">Let's Connect</a>
+      </div>
+    </header>
+
+    <div class="main_banner_title">
+      <h1>Designing through the night to bring wise ideas to light.</h1>
+      <p>With your vision, my design savvy, and a hefty amount of coffe, we can create a digital experience that is creative, beautiful, and memorable.</p>
     </div>
-  </header>
-</section>
+
+    <a href="mailto:junhyeok419@naver.com" target="_top">Email Me</a>
+  </section>
+  <!-- main_banner // -->
+
+  <section id="about_me">
+    <div class="description_wrap">
+      <div class="description">
+        <h1>안녕하세요.<br /> 제 이름은<br />노준혁입니다.</h1>
+        <p>
+          저는 2인 팀으로 2년 이상 웹 플랫폼을 개발하며, SI(System Integrator)업체로써 개발, 유지 보수 또는 시스템 통합 개발 사업을 해왔습니다.
+        </p>
+      </div>
+
+      <div class="container_circle">
+        <div class="about_circle">
+          <img src="https://owltastic.com/img/description-moon-big@2x.png" alt="돌아가는 이미지" />
+        </div>
+      </div>
+    </div>
+
+    <div class="character">
+      <img src="https://img1.daumcdn.net/thumb/C428x428/?scode=mtistory2&fname=https%3A%2F%2Ftistory4.daumcdn.net%2Ftistory%2F3485544%2Fattach%2F12c70a9480654ed6bbfcb920e6899120" alt="파카 캐릭터">
+    </div>
+  </section>
+  <!-- about_me // -->
+
+  <section id="recent_project">
+    <div class="recent_project_wrap">
+      <div class="recent_project_header">
+        <div class="star" [class]="'star' + (i + 9)" *ngFor="let item of items2; let i = index;">
+          <svg [attr.xmlns]="item.xmlns" [attr.width]="item.width" [attr.height]="item.height" [attr.viewBox]="item.viewBox">
+            <path *ngIf="i == 0" [attr.d]="item.d" [attr.fill]="item.fill" [attr.stroke]="item.stroke"></path>
+
+            <g *ngIf="i == 1" fill="none" stroke-linecap="round">
+              <path [attr.d]="item.array[0]" stroke="none"></path>
+              <path [attr.d]="item.array[1]" stroke="none" [attr.fill]="item.fill"></path>
+            </g>
+          </svg>
+        </div>
+
+        <h1>최근 프로젝트</h1>
+        <p>저는 최근 Angular, Vue, Javascript의 기술을 높이기 위해 몇가지 개인 프로젝트와 기술 블로그를 작성하고 있습니다. 저의 최근 작품들을 아래 링크에 담아두었습니다.</p>
+        <a href="#">여러 프로젝트 보러가기</a>
+      </div>
+
+      <ul>
+        <li *ngFor="let item of projects; let i = index;">
+          <a [href]="item.move" target="_blank">
+            {{item.title}}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <!-- recent_project // -->
+</main>

@@ -1,3 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;500&family=Shadows+Into+Light&display=swap');
+
+// font-family: 'Noto Sans KR', sans-serif;
+// font-family: 'Shadows Into Light', cursive;
+
+@font-face {
+  font-family: 'Nanum Myeongjo', serif;
+  src: url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;500&family=Shadows+Into+Light&display=swap');
+}
+@font-face {
+  font-family: 'Nanum Myeongjo', serif;
+  src: url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;500&family=Shadows+Into+Light&family=Splash&display=swap');
+}
+
+main {
+  background: #FAF7EB;
+  color: #214261;
+  font-family: 'Nanum Myeongjo', serif;
+  padding: 32px;
+  -webkit-font-smoothing: antialiased;
+}
+section {
+  margin-bottom: 32px;
+}
 #main_banner {
   position: relative;
   background: #214261 url(https://owltastic.com/img/main-banner-bg@2x.jpg) no-repeat;
@@ -14,6 +38,7 @@
     position: relative;
     margin-bottom: 64px;
     > h1 {
+      width: 150px;
       font-size: 26px;
       font-weight: 600;
       color: #DBBD7F;
@@ -24,14 +49,17 @@
       height: 140px;
       svg {
         position: absolute;
-        // left: 50%;
-        // transform: translateX(-50%);
         width: 128px;
+      }
+      .logo {
+        left: 50%;
+        transform: translateX(-50%);
       }
       .outer-logo-circle { fill: #DBBD7F; }
       .owl-face { fill: #FAF7EB; }
       .owl-face-outline { fill: #214261; }
       .dotted-circle {
+        left: 6px;
         fill: none;
         stroke: #FAF7EB;
         stroke-linecap: round;
@@ -42,11 +70,140 @@
     }
     .contact {
       > a {
+        width: 150px;
         text-transform: uppercase;
         font: 400 16px grad, serif;
         letter-spacing: 0.075em;
         line-height: 1.5em;
         color: #FAF7EB;
+      }
+    }
+  }
+  // Header --
+
+  .main_banner_title {
+    position: relative;
+    width: 100%;
+    max-width: 672px;
+    margin: 0 auto;
+    z-index: 10;
+    > h1 {
+      color: #FAF7EB;
+      font: 600 52px 'Nanum Myeongjo', serif;
+      line-height: 1.2727272727em;
+      margin-bottom: 24px;
+      padding: 16px;
+    }
+    > p {
+      width: 83.33333333%;
+      margin: 0 auto 64px auto;
+      color: #DEC38B;
+      font-size: 22px;
+      line-height: 1.4545454545em;
+      font-family: 'Nanum Myeongjo', serif;
+    }
+  }
+  > a {
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+    line-height: 1.5em;
+    letter-spacing: 0.075em;
+    font: 400 16px 'Nanum Myeongjo', serif;
+    text-transform: uppercase;
+    border-radius: 100px;
+    outline: none;
+    padding: 12px 32px 14px 32px;
+    margin: 0 auto;
+    background: #FAF7EB;
+    color: #214261;
+    z-index: 1;
+  }
+}
+
+#about_me {
+  display: flex;
+  > div {
+    width: 49%;
+    min-height: 400px;
+  }
+  .description_wrap {
+    position: relative;
+    padding: 88px 6.395348837%;
+    margin-right: 2%;
+    background: url(https://owltastic.com/img/description-moon-small.png) no-repeat;
+    background-position: top left;
+    background-size: auto auto;
+    background-color: #DBBD7F;
+    .description {
+      position: relative;
+      width: 80%;
+      z-index: 1;
+      > h1 {
+        font: 600 40px 'Nanum Myeongjo', serif;
+        line-height: 1.25em;
+        padding-top: 16px;
+        margin-bottom: 24px;
+      }
+      > p {
+        font-size: 18px;
+        line-height: 1.4545454545em;
+      }
+    }
+    .container_circle {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+      .about_circle {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: -20px;
+        right: -73.80952381%;
+        > img {
+          animation: big-spin 120s linear infinite;
+        }
+      }
+    }
+  }
+
+  .character {
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+    }
+  }
+}
+
+#recent_project {
+  width: 100%;
+  .recent_project_wrap {
+    position: relative;
+    width: 100%;
+    padding: 88px 6.395348837%;
+    background: url(https://owltastic.com/img/recent-posts@2x.jpg) no-repeat;
+    background-size: cover;
+    color: #FAF7EB;
+     box-sizing: border-box;
+    .recent_project_header {
+      > h1 {
+        font: 600 44px 'Nanum Myeongjo', serif;
+        line-height: 1.25em;
+        padding-top: 16px;
+        margin-bottom: 24px;
+        text-align: center;
+      }
+      > p {
+        width: 75%;
+        margin: 24px auto;
+        font-size: 22px;
+        line-height: 1.45454545em;
+        text-align: center;
       }
     }
   }
@@ -100,12 +257,49 @@
   right: 5%;
   animation: blink 3s ease-in-out infinite;
 }
+.star9 {
+  animation: blink 4s ease-in-out infinite;
+  left: 15%;
+  top: 6%;
+}
+.star10 {
+  animation: blink-alt 3s ease-in-out infinite;
+  right: 8%;
+  top: 12%;
+}
 
 @keyframes small-spin {
   0% {
-    transform: rotate(0deg) translate(10px, 10px);
+    transform: rotate(0deg);
   }
   100% {
-    transform: rotate(-360deg) translate(10px, 10px);
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes big-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes blink-alt {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  75% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
   }
 }
