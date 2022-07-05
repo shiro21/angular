@@ -52,3 +52,6 @@ Thumbs.db
 .angular
 .angular/cache
 /.angular/cache
+/.cache
+/.cache/babel-webpack
+
