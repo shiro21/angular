@@ -1,5 +1,5 @@
 /* 여백 초기화 */
-body,div,ul,li,dl,dd,dt,ol,h1,h2,h3,h4,h5,h6,input,fieldset,legend,p,select,table,th,td,tr,textarea,button,form,figure,figcaption{ margin:0; padding:0; }
+body,div,ul,li,dl,dd,dt,ol,h1,h2,h3,h4,h5,h6,input,fieldset,legend,p,select,table,th,td,tr,textarea,button,form,figure,figcaption{ margin:0; padding:0; box-sizing: border-box; }
 
 /* a 링크 초기화 */
 a { color: #222; text-decoration: none; }
@@ -47,3 +47,9 @@ input[type=checkbox] { background-color: #666; -webkit-appearance: checkbox; }
 .icon {
   font-size: 24px;
 }
+
+
+// 스크린 리더 포인터 초점을 알 수 없게 됩니다.
+// input:focus, textarea:focus {
+//   outline: none;
+// }

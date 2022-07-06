@@ -1,7 +1,48 @@
-<div>
-  <!-- <img src="https://eag.co.kr/images/main/main_img.png" alt=""> -->
-  <div class="item"></div>
-  <div class="item"></div>
-  <div class="item"></div>
-  <div class="item"></div>
+<div class="container">
+  <div class="row">
+    <div class="login_wrap">
+      <div class="login_header">
+        <h1><em>project-web</em></h1>
+      </div>
+
+      <div class="login_contents">
+        <div class="login_input">
+          <input type="text" [(ngModel)]="id" placeholder="아이디를 입력해주세요." autocomplete="off" />
+        </div>
+
+        <div class="login_input">
+          <input type="password" [(ngModel)]="password" placeholder="비밀번호를 입력해주세요." autocapitalize="off" />
+        </div>
+
+        <div class="login_setting">
+          <div class="login_preserve">
+            <div class="login_preserve_check">
+              <input type="checkbox" name="preserve" id="preserve" [(ngModel)]="preserve" />
+              <label for="preserve">로그인 상태 유지</label>
+            </div>
+          </div>
+
+          <div class="login_find">
+            <div class="login_find_id">
+              <a href="javascript:void(0)">아이디 / 비밀번호 찾기</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="login_submit">
+        <div class="login_btn">
+          <a href="javascript:void(0)" (click)="login()">로그인</a>
+        </div>
+      </div>
+
+      <div class="join_submit">
+        <div class="join_btn">
+          <span>아직 회원이 아니신가요?</span>
+          <a href="javascript:void(0)">회원가입</a>
+          <span>하러가기</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

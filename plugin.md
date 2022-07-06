@@ -1,6 +1,8 @@
 ### npm install
 npm install --save @fortawesome/fontawesome-free@6.1.1
 npm install font-awesome@4.7.0
+npm install sweetalert2@11.4.20
+npm install http@0.0.1
 
 npm install @fortawesome/fontawesome-svg-core@1.2.36
 npm install @fortawesome/free-solid-svg-icons@5.15.4

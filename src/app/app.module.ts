@@ -4,6 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+// essential
+import { HttpClientModule } from '@angular/common/http';
+
 
 // Form Module
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -51,6 +54,9 @@ import { HeaderComponent } from './items/header/header.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+
+    // essential
+    HttpClientModule,
 
     // Form Module
     FormsModule,
