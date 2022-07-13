@@ -364,12 +364,13 @@ section {
 #social_wrap {
   display: flex;
   .social_follow_me {
+    width: 49%;
+    padding: 88px 6.395348837%;
+    margin-right: 2%;
+    margin-bottom: 0;
     background: #214261 url(https://owltastic.com/img/contact-form@2x.jpg) no-repeat;
     background-size: cover;
     font-size: 18px;
-    padding: 88px 6.395348837%;
-    margin-right: 2%;
-    width: 49%;
     > h1 {
       color: #FAF7EB;
       font: 600 44px 'Nanum Myeongjo', serif;
@@ -499,7 +500,7 @@ section {
         text-align: center;
         li {
           margin: 32px auto;
-          max-width: 700px;
+          max-width: 300px;
           width: 100%;
           a {
             > img {}
@@ -633,11 +634,16 @@ section {
   }
 
   #social_wrap {
+    display: block;
     .social_follow_me {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 32px;
       > h1 {
       }
       > ul {
         li {
+          width: 33.33%;
           a {
             svg {
             }
@@ -648,6 +654,7 @@ section {
       }
     }
     .additional_text {
+      width: 100%;
       > h1 {}
       > p {}
     }
@@ -655,6 +662,9 @@ section {
 }
 
 @media screen and (max-width: 500px) {
+  main {
+    padding: 0;
+  }
   #main_banner {
     header {
       display: block; margin-bottom: 32px;

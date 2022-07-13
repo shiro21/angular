@@ -1,1 +1,86 @@
-<p>join works!</p>
+<div class="container">
+  <div class="row">
+    <div class="join_wrap">
+      <div class="join_header">
+        <h1>
+          <em>회원가입 페이지입니다.</em>
+        </h1>
+      </div>
+
+      <div class="join_contents">
+        <!-- 처음부터 length에 따라 에러 메시지가 나오는 형태 -->
+        <div class="join_input">
+          <strong>아이디 <span>*</span></strong>
+          <span>{{id.length}} / 12</span>
+          <input type="text" [(ngModel)]="id" (keyup)="check('id')" [maxlength]="12" />
+          <div class="item_check">
+            <div class="error" *ngIf="!idCheckConfirm">아이디는 4자 이상 12자 이하로 해주세요.</div>
+            <div class="good" *ngIf="idCheckConfirm">좋습니다.</div>
+          </div>
+        </div>
+
+        <div class="join_input">
+          <strong>비밀번호 <span>*</span></strong>
+          <input type="password" [(ngModel)]="password" (keyup)="check('password')" />
+          <div class="item_check">
+            <div class="error" *ngIf="!passwordCheckConfirm && password.length > 0">비밀번호는 8자 이상으로 해주세요.</div>
+            <div class="good" *ngIf="passwordCheckConfirm && password.length > 0">좋습니다.</div>
+          </div>
+        </div>
+
+        <div class="join_input">
+          <strong>비밀번호 재확인 <span>*</span></strong>
+          <input type="password" [(ngModel)]="passwordConfirm" (keyup)="check('passwordConfirm')" />
+          <div class="item_check">
+            <div class="error" *ngIf="!passwordConfirmCheckConfirm && passwordConfirm.length > 0">패스워드가 다릅니다.</div>
+            <div class="good" *ngIf="passwordConfirmCheckConfirm && passwordConfirm.length > 0">좋습니다.</div>
+          </div>
+        </div>
+
+        <div class="join_input">
+          <strong>이름</strong>
+          <input type="text" [(ngModel)]="nick" />
+        </div>
+
+        <div class="join_input">
+          <strong>생년월일</strong>
+          <div class="input_items">
+            <input type="number" [(ngModel)]="year" placeholder="년(4글자)" />
+            <select name="day" id="day" [(ngModel)]="month">
+              <option value="월">월</option>
+              <option [value]="item" *ngFor="let item of months; let i = index;">{{item}}</option>
+            </select>
+            <input type="number" [(ngModel)]="day" placeholder="일" [maxlength]="2" />
+          </div>
+        </div>
+
+        <div class="join_input">
+          <strong>성별</strong>
+          <select name="" id="" [(ngModel)]="gender">
+            <option value="성별">성별</option>
+            <option value="남자">남자</option>
+            <option value="여자">여자</option>
+          </select>
+        </div>
+
+        <div class="join_input">
+          <strong>이메일</strong>
+          <input type="text" [(ngModel)]="email" />
+        </div>
+
+        <div class="join_input">
+          <strong>핸드폰</strong>
+          <input type="text" [(ngModel)]="phone" />
+        </div>
+
+        <div class="join_btn">
+          <a href="javascript:void(0)" (click)="join()">회원가입</a>
+        </div>
+      </div>
+
+      <div class="join_footer">
+        회원가입을 꼭 해야하는 이유.. 없습니다.
+      </div>
+    </div>
+  </div>
+</div>
