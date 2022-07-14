@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -25,9 +26,17 @@ export class UserService {
 
   // 로그인
   login(req: any) {
-    return this.http.post(this.serverUrl + this.url + '/login', req, { headers : this.header })
+    return this.http.post(this.serverUrl + '/login', req, { headers : this.header })
+    // return this.http.post(this.serverUrl + this.url + '/login', req, { headers : this.header })
     .pipe(
       map((res: any) => res )
+    );
+  };
+
+  create(req: any): Observable<any> {
+    return this.http.post(this.serverUrl + this.url + '/create', req, { headers: this.header })
+    .pipe(
+      map((res: any) => res)
     );
   };
 

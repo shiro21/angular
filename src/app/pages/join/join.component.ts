@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+// service
+import { UserService } from 'src/app/services/user/user.service';
+
 @Component({
   selector: 'app-join',
   templateUrl: './join.component.html',
@@ -21,7 +24,9 @@ export class JoinComponent implements OnInit {
 
 
 
-  constructor() { }
+  constructor(
+    private userService: UserService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -59,22 +64,43 @@ export class JoinComponent implements OnInit {
   }
 
   join() {
-    console.log(Number(this.year));
-    console.log(Number(this.month));
-    console.log(Number(this.day));
+    let date = new Date().getFullYear();
+
     if(this.id.length === 0 || this.idCheckConfirm === false) {
       alert('아이디를 입력해주세요.');
     } else if(this.password !== this.passwordConfirm || this.passwordConfirmCheckConfirm === false) {
       alert('패스워드를 확인해주세요.');
     } else if(this.nick.length === 0) {
       alert('이름을 입력해주세요.');
-    } else if(Number(this.year) === NaN || this.year.length !== 4) {
+    } else if(1900 >= Number(this.year) || date <= Number(this.year)) {
       alert('년도를 확인해주세요.');
-    } else if(Number(this.month) === NaN) {
+      console.log(this.year);
+    } else if(this.month === '월') {
       alert('월을 확인해주세요.');
-    } else if(Number(this.day) === NaN || this.day === '0') {
+    } else if(this.day === '' || !Number(this.day)) {
       alert('일을 확인해주세요.');
-    } else { alert('양호') };
+    } else {
+      const req = {
+        params: {
+          query: {
+            type: 'local',
+            id: this.id,
+            nick: this.nick,
+            phone: this.phone,
+            year: this.year,
+            month: this.month,
+            day: this.day,
+            gender: this.gender,
+
+            password: this.password
+          }
+        }
+      };
+      this.userService.create(req)
+      .subscribe(res => {
+        console.log(res);
+      })
+    };
   }
 
 }
