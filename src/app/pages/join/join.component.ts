@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import * as $ from 'jquery';
 
 // service
 import { UserService } from 'src/app/services/user/user.service';
+import { StorageService } from 'src/app/services/storage/storage.service';
 
 @Component({
   selector: 'app-join',
@@ -10,7 +14,7 @@ import { UserService } from 'src/app/services/user/user.service';
 })
 export class JoinComponent implements OnInit {
 
-  id: String = '';
+  id: string = '';
   password: String = '';
   passwordConfirm: String = '';
   nick: String = '';
@@ -22,10 +26,10 @@ export class JoinComponent implements OnInit {
   phone: String = '';
   months: any = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
 
-
-
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    private storageService: StorageService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -33,6 +37,7 @@ export class JoinComponent implements OnInit {
 
   // ID Check
   idCheckConfirm: boolean = false;
+  idCheckExists: boolean = false;
   passwordCheckConfirm: boolean = false;
   passwordConfirmCheckConfirm: boolean = false;
   check(list: any) {
@@ -43,6 +48,19 @@ export class JoinComponent implements OnInit {
         } else if(this.id.length > 3) {
           this.idCheckConfirm = true;
         }
+
+        const req = {
+          id: this.id
+        };
+        this.userService.idCheck(req)
+        .subscribe(res => {
+          if(res.code === 'y') {
+            this.idCheckExists = true;
+          } else {
+            this.idCheckExists = false;
+          }
+          console.log(this.idCheckExists);
+        })
       break;
 
       case 'password' :
@@ -63,10 +81,19 @@ export class JoinComponent implements OnInit {
     }
   }
 
+  keyCheck(e: any) {
+    const exptext = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
+    console.log(exptext.test(this.id));
+    if(exptext.test(this.id)) {
+      this.id = this.id.replace(exptext, '');
+    }
+  }
+
   join() {
+    const exptext = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
     let date = new Date().getFullYear();
 
-    if(this.id.length === 0 || this.idCheckConfirm === false) {
+    if(this.id.length === 0 || this.idCheckConfirm === false || exptext.test(this.id)) {
       alert('아이디를 입력해주세요.');
     } else if(this.password !== this.passwordConfirm || this.passwordConfirmCheckConfirm === false) {
       alert('패스워드를 확인해주세요.');
@@ -74,7 +101,6 @@ export class JoinComponent implements OnInit {
       alert('이름을 입력해주세요.');
     } else if(1900 >= Number(this.year) || date <= Number(this.year)) {
       alert('년도를 확인해주세요.');
-      console.log(this.year);
     } else if(this.month === '월') {
       alert('월을 확인해주세요.');
     } else if(this.day === '' || !Number(this.day)) {
@@ -98,7 +124,10 @@ export class JoinComponent implements OnInit {
       };
       this.userService.create(req)
       .subscribe(res => {
-        console.log(res);
+        this.storageService.token = res.token;
+        this.storageService.uid = res.user;
+
+        this.router.navigate(['/']);
       })
     };
   }

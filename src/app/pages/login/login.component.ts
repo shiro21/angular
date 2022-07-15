@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import Swal from 'sweetalert2';
 
 // service
 import { UserService } from 'src/app/services/user/user.service';
+import { StorageService } from 'src/app/services/storage/storage.service';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +19,9 @@ export class LoginComponent implements OnInit {
   preserve: any;
 
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    private storageService: StorageService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -37,14 +41,28 @@ export class LoginComponent implements OnInit {
       });
     } else {
       const req = {
-        id: this.id,
-        password: this.password
+        params: {
+          query: {
+            id: this.id,
+            password: this.password
+          }
+        }
       };
       this.userService.login(req)
       .subscribe(res => {
-        console.log('제대로 들어감');
+        if(res.code === 'y') {
+          this.storageService.token = res.token;
+          this.storageService.uid = res.user;
+
+          this.router.navigate(['/']);
+        }
       });
     }
+  }
+
+  // 회원가입 하러가기
+  moveJoin() {
+    this.router.navigate(['/join']);
   }
 
 }

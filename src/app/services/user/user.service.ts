@@ -26,13 +26,14 @@ export class UserService {
 
   // 로그인
   login(req: any) {
-    return this.http.post(this.serverUrl + '/login', req, { headers : this.header })
+    return this.http.post(this.serverUrl + this.authUrl + '/login', req, { headers : this.header })
     // return this.http.post(this.serverUrl + this.url + '/login', req, { headers : this.header })
     .pipe(
       map((res: any) => res )
     );
   };
 
+  // 아이디 만들기
   create(req: any): Observable<any> {
     return this.http.post(this.serverUrl + this.url + '/create', req, { headers: this.header })
     .pipe(
@@ -40,4 +41,11 @@ export class UserService {
     );
   };
 
+  // 아이디 확인
+  idCheck(req: any): Observable<any> {
+    return this.http.post(this.serverUrl + this.url + '/idCheck', req, { headers: this.header })
+    .pipe(
+      map((res: any) => res)
+    );
+  };
 }
