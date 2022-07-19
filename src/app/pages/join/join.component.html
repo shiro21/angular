@@ -3,7 +3,7 @@
     <div class="join_wrap">
       <div class="join_header">
         <h1>
-          <em>회원가입 페이지입니다.</em>
+          <em>회원가입 페이지입니다..</em>
         </h1>
       </div>
 
@@ -12,7 +12,7 @@
         <div class="join_input">
           <strong>아이디 <span>*</span></strong>
           <span>{{id.length}} / 12</span>
-          <input type="text" [(ngModel)]="id" (keyup)="check('id')" (keydown)="keyCheck(id)" (keyup)="keyCheck(id)" (keypress)="keyCheck(id)" [maxlength]="12" />
+          <input type="text" [(ngModel)]="id" (keyup)="check('id')" (keydown)="keyCheck(id)" [maxlength]="12" />
           <div class="item_check">
             <div class="error" *ngIf="idCheckExists">이 아이디는 이미 존재합니다.</div>
             <div class="error" *ngIf="!idCheckConfirm">아이디는 4자 이상 12자 이하로 해주세요.</div>
